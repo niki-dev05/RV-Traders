@@ -1,4 +1,4 @@
-(function ($) {
+(function($) {
     "use strict";
 
 
@@ -11,7 +11,7 @@
             effect: 'slide',
             animSpeed: 500,
             testMode: true,
-            onChange: function (evt) {
+            onChange: function(evt) {
                 alert("The selected language is: " + evt.selectedItem);
             }
 
@@ -23,7 +23,7 @@
         $(".checkout__payment__item").find('.checkout__payment__content').hide();
         $(".checkout__payment__item--active").find('.checkout__payment__content').show();
 
-        $(".checkout__payment__title").on("click", function (e) {
+        $(".checkout__payment__title").on("click", function(e) {
             e.preventDefault();
 
 
@@ -54,7 +54,7 @@
 
 
     if ($('.dial').length) {
-        $('.dial').appear(function () {
+        $('.dial').appear(function() {
             var elm = $(this);
             var color = elm.attr('data-fgColor');
             var perc = elm.attr('value');
@@ -75,11 +75,11 @@
             }, {
                 duration: 2000,
                 easing: 'swing',
-                progress: function () {
+                progress: function() {
                     elm.val(Math.ceil(this.value)).trigger('change');
                 }
             });
-            $(this).append(function () { });
+            $(this).append(function() {});
         }, {
             accY: 20
         });
@@ -113,7 +113,7 @@
 
     //Pricing Tabs
     if ($('.pricing-tabs').length) {
-        $('.pricing-tabs .tab-btns .tab-btn').on('click', function (e) {
+        $('.pricing-tabs .tab-btns .tab-btn').on('click', function(e) {
             e.preventDefault();
             var target = $($(this).attr('data-tab'));
 
@@ -132,7 +132,7 @@
 
     // Type Effect
     if ($('.typed-effect').length) {
-        $('.typed-effect').each(function () {
+        $('.typed-effect').each(function() {
             var typedStrings = $(this).data('strings');
             var typedTag = $(this).attr('id');
             var typed = new Typed('#' + typedTag, {
@@ -149,7 +149,7 @@
 
     // Popular Causes Progress Bar
     if ($('.count-bar').length) {
-        $('.count-bar').appear(function () {
+        $('.count-bar').appear(function() {
             var el = $(this);
             var percent = el.data('percent');
             $(el).css('width', percent).addClass('counted');
@@ -162,7 +162,7 @@
     //Fact Counter + Text Count
     if ($(".count-box").length) {
         $(".count-box").appear(
-            function () {
+            function() {
                 var $t = $(this),
                     n = $t.find(".count-text").attr("data-stop"),
                     r = parseInt($t.find(".count-text").attr("data-speed"), 10);
@@ -176,36 +176,36 @@
                     }, {
                         duration: r,
                         easing: "linear",
-                        step: function () {
+                        step: function() {
                             $t.find(".count-text").text(
                                 Math.floor(this.countNum)
                             );
                         },
-                        complete: function () {
+                        complete: function() {
                             $t.find(".count-text").text(this.countNum);
                         },
                     });
                 }
             }, {
-            accY: 0
-        }
+                accY: 0
+            }
         );
     }
 
     // Accrodion
     if ($(".accrodion-grp").length) {
         var accrodionGrp = $(".accrodion-grp");
-        accrodionGrp.each(function () {
+        accrodionGrp.each(function() {
             var accrodionName = $(this).data("grp-name");
             var Self = $(this);
             var accordion = Self.find(".accrodion");
             Self.addClass(accrodionName);
             Self.find(".accrodion .accrodion-content").hide();
             Self.find(".accrodion.active").find(".accrodion-content").show();
-            accordion.each(function () {
+            accordion.each(function() {
                 $(this)
                     .find(".accrodion-title")
-                    .on("click", function () {
+                    .on("click", function() {
                         if ($(this).parent().hasClass("active") === false) {
                             $(".accrodion-grp." + accrodionName)
                                 .find(".accrodion")
@@ -231,17 +231,17 @@
     // Accrodion Two
     if ($(".accrodion-grp2").length) {
         var accrodionGrp = $(".accrodion-grp2");
-        accrodionGrp.each(function () {
+        accrodionGrp.each(function() {
             var accrodionName = $(this).data("grp-name");
             var Self = $(this);
             var accordion = Self.find(".accrodion");
             Self.addClass(accrodionName);
             Self.find(".accrodion .accrodion-content").hide();
             Self.find(".accrodion.active").find(".accrodion-content").show();
-            accordion.each(function () {
+            accordion.each(function() {
                 $(this)
                     .find(".accrodion-title")
-                    .on("click", function () {
+                    .on("click", function() {
                         if ($(this).parent().hasClass("active") === false) {
                             $(".accrodion-grp2." + accrodionName)
                                 .find(".accrodion")
@@ -374,11 +374,11 @@
                 },
             },
         });
-        nextBtn.on('click', function (e) {
+        nextBtn.on('click', function(e) {
             e.preventDefault();
             blogCarousel.trigger('next.owl.carousel', [500]);
         });
-        prevBtn.on('click', function (e) {
+        prevBtn.on('click', function(e) {
             e.preventDefault();
             blogCarousel.trigger('prev.owl.carousel', [500]);
         });
@@ -576,13 +576,13 @@
 
 
     if ($(".scroll-to-target").length) {
-        $(".scroll-to-target").on("click", function (e) {
+        $(".scroll-to-target").on("click", function(e) {
             e.preventDefault();
             var target = $(this).attr("data-target");
             // animate
             $("html, body").animate({
-                scrollTop: $(target).offset().top,
-            },
+                    scrollTop: $(target).offset().top,
+                },
                 1000
             );
         });
@@ -606,12 +606,12 @@
                     required: true,
                 },
             },
-            submitHandler: function (form) {
+            submitHandler: function(form) {
                 // sending value with ajax request
                 $.post(
                     $(form).attr("action"),
                     $(form).serialize(),
-                    function (response) {
+                    function(response) {
                         $(form).parent().find(".result").append(response);
                         $(form).find('input[type="text"]').val("");
                         $(form).find('input[type="email"]').val("");
@@ -625,16 +625,16 @@
 
     // mailchimp form
     if ($(".mc-form").length) {
-        $(".mc-form").each(function () {
+        $(".mc-form").each(function() {
             var Self = $(this);
             var mcURL = Self.data("url");
             var mcResp = Self.parent().find(".mc-form__response");
 
             Self.ajaxChimp({
                 url: mcURL,
-                callback: function (resp) {
+                callback: function(resp) {
                     // appending response
-                    mcResp.append(function () {
+                    mcResp.append(function() {
                         return '<p class="mc-message">' + resp.msg + "</p>";
                     });
                     // making things based on response
@@ -671,7 +671,7 @@
 
     if ($(".img-popup").length) {
         var groups = {};
-        $(".img-popup").each(function () {
+        $(".img-popup").each(function() {
             var id = parseInt($(this).attr("data-group"), 10);
 
             if (!groups[id]) {
@@ -681,7 +681,7 @@
             groups[id].push(this);
         });
 
-        $.each(groups, function () {
+        $.each(groups, function() {
             $(this).magnificPopup({
                 type: "image",
                 closeOnContentClick: true,
@@ -698,14 +698,14 @@
     function dynamicCurrentMenuClass(selector) {
         let FileName = window.location.href.split("/").reverse()[0];
 
-        selector.find("li").each(function () {
+        selector.find("li").each(function() {
             let anchor = $(this).find("a");
             if ($(anchor).attr("href") == FileName) {
                 $(this).addClass("current");
             }
         });
         // if any li has .current elmnt add class
-        selector.children("li").each(function () {
+        selector.children("li").each(function() {
             if ($(this).find(".current").length) {
                 $(this).addClass("current");
             }
@@ -753,15 +753,15 @@
         let dropdownAnchor = $(
             ".mobile-nav__container .main-menu__list .dropdown > a"
         );
-        dropdownAnchor.each(function () {
+        dropdownAnchor.each(function() {
             let self = $(this);
             let toggleBtn = document.createElement("BUTTON");
             toggleBtn.setAttribute("aria-label", "dropdown toggler");
             toggleBtn.innerHTML = "<i class='fa fa-angle-down'></i>";
-            self.append(function () {
+            self.append(function() {
                 return toggleBtn;
             });
-            self.find("button").on("click", function (e) {
+            self.find("button").on("click", function(e) {
                 e.preventDefault();
                 let self = $(this);
                 self.toggleClass("expanded");
@@ -773,7 +773,7 @@
 
 
     if ($(".mobile-nav__toggler").length) {
-        $(".mobile-nav__toggler").on("click", function (e) {
+        $(".mobile-nav__toggler").on("click", function(e) {
             e.preventDefault();
             $(".mobile-nav__wrapper").toggleClass("expanded");
             $("body").toggleClass("locked");
@@ -782,7 +782,7 @@
 
 
     if ($(".search-toggler").length) {
-        $(".search-toggler").on("click", function (e) {
+        $(".search-toggler").on("click", function(e) {
             e.preventDefault();
             $(".search-popup").toggleClass("active");
             $(".mobile-nav__wrapper").removeClass("expanded");
@@ -792,7 +792,7 @@
 
 
     if ($(".mini-cart__toggler").length) {
-        $(".mini-cart__toggler").on("click", function (e) {
+        $(".mini-cart__toggler").on("click", function(e) {
             e.preventDefault();
             $(".mini-cart").toggleClass("expanded");
             $(".mobile-nav__wrapper").removeClass("expanded");
@@ -804,8 +804,8 @@
 
     if ($(".odometer").length) {
         var odo = $(".odometer");
-        odo.each(function () {
-            $(this).appear(function () {
+        odo.each(function() {
+            $(this).appear(function() {
                 var countNumber = $(this).attr("data-count");
                 $(this).html(countNumber);
             });
@@ -837,7 +837,7 @@
         let donateInput = $("#donate-amount");
         $("#donate-amount__predefined")
             .find("li")
-            .on("click", function (e) {
+            .on("click", function(e) {
                 e.preventDefault();
                 let amount = $(this).find("a").text();
                 donateInput.val(amount);
@@ -848,7 +848,7 @@
 
     if ($('.thm-accordion').length) {
         let accordionWrapper = $('.thm-accordion');
-        accordionWrapper.each(function () {
+        accordionWrapper.each(function() {
             let $this = $(this);
             let accordionID = $this.attr('id');
             let accordionTitle = $this.find('.thm-accordion__title');
@@ -857,7 +857,7 @@
             let mainAccordionContent = $this.find('.thm-accordion__content').hide();
             $this.find('.active-item .thm-accordion__content').show();
             // on title click
-            accordionTitle.on('click', function (e) {
+            accordionTitle.on('click', function(e) {
                 e.preventDefault();
                 let $this = $(this);
                 let accordionItem = $(this).parent();
@@ -871,19 +871,19 @@
         })
     }
 
-    $(".add").on("click", function () {
+    $(".add").on("click", function() {
         if ($(this).prev().val() < 999) {
             $(this)
                 .prev()
                 .val(+$(this).prev().val() + 1);
         }
     });
-    $(".sub").on("click", function () {
+    $(".sub").on("click", function() {
         if ($(this).next().val() > 1) {
             if ($(this).next().val() > 1)
                 $(this)
-                    .next()
-                    .val(+$(this).next().val() - 1);
+                .next()
+                .val(+$(this).next().val() - 1);
         }
     });
 
@@ -892,7 +892,7 @@
 
     //Tabs Box
     if ($(".tabs-box").length) {
-        $(".tabs-box .tab-buttons .tab-btn").on("click", function (e) {
+        $(".tabs-box .tab-buttons .tab-btn").on("click", function(e) {
             e.preventDefault();
             var target = $($(this).attr("data-tab"));
 
@@ -947,7 +947,7 @@
         var limitFieldMin = document.getElementById("min-value-rangeslider");
         var limitFieldMax = document.getElementById("max-value-rangeslider");
 
-        priceRange.noUiSlider.on("update", function (values, handle) {
+        priceRange.noUiSlider.on("update", function(values, handle) {
             (handle ? $(limitFieldMax) : $(limitFieldMin)).text(values[handle]);
         });
     }
@@ -956,7 +956,7 @@
     function thmSwiperInit() {
         // swiper slider
         const swiperElm = document.querySelectorAll(".thm-swiper__slider");
-        swiperElm.forEach(function (swiperelm) {
+        swiperElm.forEach(function(swiperelm) {
             const swiperOptions = JSON.parse(swiperelm.dataset.swiperOptions);
             let thmSwiperSlider = new Swiper(swiperelm, swiperOptions);
         });
@@ -965,7 +965,7 @@
     function thmTinyInit() {
         // tiny slider
         const tinyElm = document.querySelectorAll(".thm-tiny__slider");
-        tinyElm.forEach(function (tinyElm) {
+        tinyElm.forEach(function(tinyElm) {
             const tinyOptions = JSON.parse(tinyElm.dataset.tinyOptions);
             let thmTinySlider = tns(tinyOptions);
         });
@@ -1009,7 +1009,7 @@
             });
         }
         if ($('.post-filter').length) {
-            $('.post-filter li').children('.filter-text').on('click', function () {
+            $('.post-filter li').children('.filter-text').on('click', function() {
                 var Self = $(this);
                 var selector = Self.parent().attr('data-filter');
                 $('.post-filter li').removeClass('active');
@@ -1029,7 +1029,7 @@
         if ($('.post-filter.has-dynamic-filters-counter').length) {
             // var allItem = $('.single-filter-item').length;
             var activeFilterItem = $('.post-filter.has-dynamic-filters-counter').find('li');
-            activeFilterItem.each(function () {
+            activeFilterItem.each(function() {
                 var filterElement = $(this).data('filter');
                 var count = $('.filter-layout').find(filterElement).length;
                 $(this).children('.filter-text').append('<span class="count">' + count + '</span>');
@@ -1040,7 +1040,7 @@
 
     // window load event
 
-    $(window).on("load", function () {
+    $(window).on("load", function() {
         if ($(".preloader").length) {
             $(".preloader").fadeOut();
         }
@@ -1053,9 +1053,9 @@
 
 
         if ($(".circle-progress").length) {
-            $(".circle-progress").appear(function () {
+            $(".circle-progress").appear(function() {
                 let circleProgress = $(".circle-progress");
-                circleProgress.each(function () {
+                circleProgress.each(function() {
                     let progress = $(this);
                     let progressOptions = progress.data("options");
                     progress.circleProgress(progressOptions);
@@ -1074,7 +1074,7 @@
                 },
             });
             // on click filter links
-            postFilterList.on("click", function () {
+            postFilterList.on("click", function() {
                 var Self = $(this);
                 var selector = Self.attr("data-filter");
                 postFilterList.removeClass("active");
@@ -1099,7 +1099,7 @@
                 "li"
             );
 
-            activeFilterItem.each(function () {
+            activeFilterItem.each(function() {
                 var filterElement = $(this).data("filter");
                 var count = $(".filter-layout").find(filterElement).length;
                 $(this).append("<sup>[" + count + "]</sup>");
@@ -1110,7 +1110,7 @@
 
     // window scroll event
 
-    $(window).on("scroll", function () {
+    $(window).on("scroll", function() {
         if ($(".stricked-menu").length) {
             var headerScrollPos = 130;
             var stricky = $(".stricked-menu");
@@ -1133,13 +1133,13 @@
 
 
     if ($(".before-after-twentytwenty").length) {
-        $(".before-after-twentytwenty").each(function () {
+        $(".before-after-twentytwenty").each(function() {
             var Self = $(this);
             var objName = Self.attr('id');
             $('#' + objName).twentytwenty();
 
             // hack for bs tab
-            $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+            $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function(e) {
                 var paneTarget = $(e.target).attr('data-target');
                 var $thePane = $('.tab-pane' + paneTarget);
                 var twentyTwentyContainer = '#' + objName;
