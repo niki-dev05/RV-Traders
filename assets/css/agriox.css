@@ -2257,9 +2257,7 @@ button {
     Page Header
 =============================================
 ***/
-.contact_us_green * {
-    font-family: Nunito, sans-serif;
-  }
+
   
   .contact_us_green .responsive-container-block {
     min-height: 75px;
@@ -2324,7 +2322,7 @@ button {
   }
   
   .contact_us_green .text-blk.contactus-subhead {
-    max-width: 385px;
+    /* max-width: 385px; */
     color: #939393;
     font-size: 18px;
     margin-top: 0px;
@@ -2361,7 +2359,7 @@ button {
     display: flex;
     margin-top: 0px;
     margin-right: 0px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     margin-left: 0px;
   }
   
@@ -2492,7 +2490,7 @@ button {
     padding-top: 0px;
     padding-right: 0px;
     padding-bottom: 0px;
-    padding-left: 60px;
+    padding-left: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11052,7 +11050,7 @@ Sidebar
     .cta-three__box {
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: (1fr)[3];
+        -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: repeat(3, 1fr);
     }
 }
