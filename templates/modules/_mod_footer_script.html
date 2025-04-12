@@ -1,6 +1,33 @@
 
 
 
+<!-- Optional: Add this script to your _mod_milk_footer_script.html or at the end of this file -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Initialize the carousel with options
+      var headerCarousel = document.getElementById('header-carousel');
+      if (headerCarousel) {
+          var carousel = new bootstrap.Carousel(headerCarousel, {
+              interval: 6000,
+              wrap: true,
+              pause: 'hover'
+          });
+          
+          // Preload images for smoother transitions
+          const slides = headerCarousel.querySelectorAll('.carousel-item');
+          slides.forEach(slide => {
+              const img = slide.querySelector('img');
+              if (img && img.src) {
+                  const preloadLink = document.createElement('link');
+                  preloadLink.href = img.src;
+                  preloadLink.rel = 'preload';
+                  preloadLink.as = 'image';
+                  document.head.appendChild(preloadLink);
+              }
+          });
+      }
+  });
+</script>
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow-2"></i></a>
 
 

@@ -145,42 +145,146 @@
 
 
 /*** Header ***/
-.carousel-caption {
+/*** Header Carousel Matching Second Image Exactly ***/
+/* Carousel dimensions and positioning */
+#header-carousel .carousel-item {
+    position: relative;
+    height: 350px; /* Match your site's exact height */
+    overflow: hidden;
+}
+
+#header-carousel .carousel-item img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.25); /* Reduced brightness to match second image */
+}
+
+/* Content overlay without dark background */
+.carousel-content-overlay {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0, .7);
     z-index: 1;
 }
 
+/* Text styling to match your site */
+.premium-quality {
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.carousel-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* Yellow button for both slides exactly like second image */
+.yellow-btn {
+    background-color: #EDDD5E; /* Your yellow color */
+    color: #404A3D; /* Dark text */
+    padding: 8px 20px;
+    font-size: 14px;
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.yellow-btn:hover {
+    background-color: #deca4a;
+    color: #404A3D;
+}
+
+/* Simple carousel controls */
 .carousel-control-prev,
 .carousel-control-next {
-    width: 15%;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 3rem;
-    background-color: var(--primary);
-    border: 10px solid var(--primary);
+    width: 15px;
+    height: 15px;
 }
 
+/* Carousel indicators (dots) */
+.carousel-indicators {
+    margin-bottom: 10px;
+}
+
+.carousel-indicators button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 0 3px;
+}
+
+.carousel-indicators button.active {
+    background-color: #EDDD5E; /* Yellow to match buttons */
+}
+
+/* Mobile adjustments */
 @media (max-width: 768px) {
     #header-carousel .carousel-item {
-        position: relative;
-        min-height: 450px;
+        height: 250px;
     }
     
-    #header-carousel .carousel-item img {
-        position: absolute;
+    .carousel-content-overlay .text-end {
+        text-align: center !important;
+    }
+    
+    .carousel-title {
+        font-size: 28px;
+    }
+    
+    .carousel-content-overlay .offset-lg-6 {
+        margin-left: 0;
+    }
+    
+    .carousel-content-overlay .col-lg-6 {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+    }
+}
+
+@media (max-width: 576px) {
+    #header-carousel .carousel-item {
+        height: 200px;
+    }
+    
+    .carousel-title {
+        font-size: 24px;
+    }
+    
+    .premium-quality {
+        font-size: 12px;
+    }
+    
+    .yellow-btn {
+        padding: 6px 18px;
+        font-size: 13px;
     }
 }
 
@@ -215,7 +319,7 @@
     height: 2px;
     top: 5px;
     left: -40px;
-    background: var(--primary);
+    /* background: var(--primary); */
     z-index: -1;
 }
 
@@ -226,7 +330,7 @@
     height: 2px;
     bottom: 6px;
     left: -60px;
-    background: var(--primary);
+    /* background: var(--primary); */
     z-index: -1;
 }
 
